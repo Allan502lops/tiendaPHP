@@ -1,0 +1,123 @@
+/* Estilos base */
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/img.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide la página en dos columnas iguales */
+  grid-gap: 20px; /* Espacio entre las columnas */
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.image-container {
+  background-image: url('../img/login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#login-form {
+  padding: 80px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #cf3131, #ebf74c, #c153ec, #6de26d, #e2276f, #9f5ad1, #25d9e6);
+  background-size: 600% 600%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+#login-form h2 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #0dadec;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #be33ff;
+}
+
+.back-link {
+  color: #f700ff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #ff0202;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+#login-form a {
+  text-decoration: none;
+  color: #0bd4c3;
+}
+
+#login-form hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+#login-form a:hover {
+  color: #555;
+}
+
+.input-container label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-container i {
+  margin-right: 8px;
+}
