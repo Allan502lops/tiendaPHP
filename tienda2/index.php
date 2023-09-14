@@ -81,26 +81,25 @@
     </div>
  </body>
     <!-- Header-->
-    <header class="bg-dark py-5" style="background-image: url('./assets/img/namesnack-computer-business-names-5998x4001-20200730.jpeg'); background-size: cover; background-position: center;">
+    <header class="bg-blue-gradient py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder" id="header-title">OnClick</h1>
-            <p id ="header-text"> De todo un poco </p>
-            <style>
-           #header-title {
-           user-select: none; /* Evita que el texto sea seleccionable */
-           cursor: default; /* Mantiene el cursor predeterminado al pasar sobre el texto */
-           
-           }
-           #header-text {
-           user-select: none; /* Evita que el texto sea seleccionable */
-           cursor: default; /* Mantiene el cursor predeterminado al pasar sobre el texto */
-           
-           }
-</style>
+            <h1 class="display-4 fw-bolder" id="header-title">Farmacia los Altos</h1>
         </div>
     </div>
+<style>
+    .bg-blue-gradient {
+  background: linear-gradient(to bottom, #4a90e2, #67c0f7);
+}
+
+#header-title {
+  color: white; /* Color del texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para resaltar */
+}
+
+</style>
 </header>
+
 
 
 
@@ -161,9 +160,9 @@
         <div class="row">
             <div class="col-md-4 text-white">
                 <h4>Contáctanos</h4>
-                <p>Dirección: 123 Calle Principal, Guatemala</p>
-                <p>Teléfono: +502 33430250</p>
-                <p>Email: alanlopez2p030@gmail.com</p>
+                <p>Dirección: 1-56 Calle Principal, Quetzaltenango</p>
+                <p>Teléfono: +502 </p>
+                <p>Email:m</p>
             </div>
             
             <div class="col-md-4 text-white">
@@ -180,7 +179,7 @@
         <hr>
         <div class="row">
             <div class="col-md-12 text-white text-center">
-                <p>&copy; 2023 OnClick. Todos los derechos reservados.</p>
+                <p>&copy; Farmacia los Altos. Todos los derechos reservados.</p>
                 <p><a href="#">Política de privacidad</a> | <a href="#">Términos de servicio</a></p>
             </div>
         </div>

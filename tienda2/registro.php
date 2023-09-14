@@ -34,10 +34,8 @@
 <div class="pie-form">
   <a href="userForm.php"><i class="fas fa-user-plus"></i> ¿No tienes una cuenta? Regístrate</a>
   <hr>
-  <a id="admin" href="./admin/index.php"><i class="fas fa-cogs"></i> Panel Profesional</a>
-  <hr>
-  <a href="registro.php"><i class="fas fa-unlock"></i> Olvidaste tu contraseña</a>
-  <hr>
+ 
+
   <a href="index.php"><i class="fas fa-home"></i> Volver a la página principal</a>
 </div>
 

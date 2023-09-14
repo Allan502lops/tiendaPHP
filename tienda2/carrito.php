@@ -154,9 +154,8 @@ $('#btnPagar').on('click', function() {
                     console.log(response);
                     const res = JSON.parse(response);
                     // Mostrar los productos en una nueva página
-                    localStorage.setItem("productos", JSON.stringify([])); // Vaciar carrito
-                    localStorage.setItem("total", "0.00"); // Reiniciar total
-                    // Pasar los productos y el total como parámetros a factura.php
+                    localStorage.setItem("productos", JSON.stringify([])); 
+                    localStorage.setItem("total", "0.00"); 
                     window.location.href = `factura.php?total=${res.total}&productos=${JSON.stringify(array)}`;
                 },
                 error: function(error) {

@@ -41,19 +41,7 @@
         <div class="image-container"></div>
     </div>
 
-    <script>
-        const form = document.getElementById('myForm');
-        form.addEventListener('submit', (event) => {
-            const usuario = document.querySelector('input[name="usuario"]');
-            const apellido = document.querySelector('input[name="apellido"]');
-            const correo = document.querySelector('input[name="correo"]');
-            const password = document.querySelector('input[name="clave"]');
-            if (usuario.value === '' || apellido.value === '' || correo.value === '' || clave.value === '') {
-                alert('Todos los campos son obligatorios');
-                event.preventDefault();
-            }
-        });
-    </script>
+    
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

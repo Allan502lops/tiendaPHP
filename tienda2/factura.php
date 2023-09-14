@@ -49,7 +49,7 @@ require_once "./config/conexion.php";
                     }
                     ?>
                 </table>
-                <p class="total">Total a Pagar: <?php echo $total; ?></p>
+                <p class="total">Total cancelado: <?php echo $total; ?></p>
             </div>
         <?php
         } else {

@@ -44,8 +44,16 @@ hr {
 .text-center {
   text-align: center;
 }
+.bg-blue-gradient {
+  background: linear-gradient(to bottom, #4a90e2, #67c0f7);
+}
 
-/* Estilos para el fondo en forma de olas */
+#header-title {
+  color: white; /* Color del texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para resaltar */
+}
+
+
 footer:before {
   content: "";
   position: absolute;
