@@ -1,8 +1,8 @@
 <?php
     $host = "localhost";
     $user = "root";
-    $clave = "5160129802";
-    $bd = "clinica";
+    $clave = "";
+    $bd = "ecomerce";
     $conexion = mysqli_connect($host,$user,$clave,$bd);
     if (mysqli_connect_errno()){
         echo "No se pudo conectar a la base de datos";

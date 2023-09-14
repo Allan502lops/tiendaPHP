@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img style="width: 120px; height: auto;" src="./assets/img/onClickLogo.jpg" alt="" />
+                    <img style="width: 120px; height: auto;" src="./assets/img/logo.jpeg" alt="" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -145,6 +145,8 @@
               </div>
             </div>
           </div>
+          
+</form>
       <?php
         }
       } ?>

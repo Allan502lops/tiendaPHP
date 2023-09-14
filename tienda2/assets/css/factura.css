@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.factura {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.encabezado h1 {
+    margin: 5px 0;
+}
+
+.detalle-compra table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.detalle-compra th, .detalle-compra td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.detalle-compra th {
+    background-color: #f2f2f2;
+}
+
+.total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}

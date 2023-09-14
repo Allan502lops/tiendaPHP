@@ -79,6 +79,7 @@ require_once "./config/config.php";
                     <div class="d-grid gap-2">
                         <div id="paypal-button-container"></div>
                         <button class="btn btn-warning" type="button" id="btnVaciar">Vaciar Carrito</button>
+                        <button class="btn btn-success" type="button" id="btnPagar">Pagar</button>
                     </div>
                 </div>
             </div>
@@ -97,66 +98,77 @@ require_once "./config/config.php";
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&locale=<?php echo LOCALE; ?>"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
-        mostrarCarrito();
+       mostrarCarrito();
 
-        function mostrarCarrito() {
-            if (localStorage.getItem("productos") != null) {
-                let array = JSON.parse(localStorage.getItem('productos'));
-                if (array.length > 0) {
-                    $.ajax({
-                        url: 'ajax.php',
-                        type: 'POST',
-                        async: true,
-                        data: {
-                            action: 'buscar',
-                            data: array
-                        },
-                        success: function(response) {
-                            console.log(response);
-                            const res = JSON.parse(response);
-                            let html = '';
-                            res.datos.forEach(element => {
-                                html += `
-                            <tr>
-                                <td>${element.id}</td>
-                                <td>${element.nombre}</td>
-                                <td>${element.precio}</td>
-                                <td>1</td>
-                                <td>${element.precio}</td>
-                            </tr>
-                            `;
-                            });
-                            $('#tblCarrito').html(html);
-                            $('#total_pagar').text(res.total);
-                            paypal.Buttons({
-                                style: {
-                                    color: 'blue',
-                                    shape: 'pill',
-                                    label: 'pay'
-                                },
-                                createOrder: function(data, actions) {
-                                    return actions.order.create({
-                                        purchase_units: [{
-                                            amount: {
-                                                value: res.total
-                                            }
-                                        }]
-                                    });
-                                },
-                                onApprove: function(data, actions) {
-                                    return actions.order.capture().then(function(details) {
-                                        alert('Transaction completed by ' + details.payer.name.given_name);
-                                    });
-                                }
-                            }).render('#paypal-button-container');
-                        },
-                        error: function(error) {
-                            console.log(error);
-                        }
+function mostrarCarrito() {
+    if (localStorage.getItem("productos") != null) {
+        let array = JSON.parse(localStorage.getItem('productos'));
+        if (array.length > 0) {
+            $.ajax({
+                url: 'ajax.php',
+                type: 'POST',
+                async: true,
+                data: {
+                    action: 'buscar',
+                    data: array
+                },
+                success: function(response) {
+                    console.log(response);
+                    const res = JSON.parse(response);
+                    let html = '';
+                    res.datos.forEach(element => {
+                        html += `
+                    <tr>
+                        <td>${element.id}</td>
+                        <td>${element.nombre}</td>
+                        <td>${element.precio}</td>
+                        <td>1</td>
+                        <td>${element.precio}</td>
+                    </tr>
+                    `;
                     });
+                    $('#tblCarrito').html(html);
+                    $('#total_pagar').text(res.total);
+                },
+                error: function(error) {
+                    console.log(error);
                 }
-            }
+            });
         }
+    }
+}
+
+$('#btnPagar').on('click', function() {
+    if (localStorage.getItem("productos") != null) {
+        let array = JSON.parse(localStorage.getItem('productos'));
+        if (array.length > 0) {
+            $.ajax({
+                url: 'ajax.php',
+                type: 'POST',
+                async: true,
+                data: {
+                    action: 'generar_factura',
+                    data: array
+                },
+                success: function(response) {
+                    console.log(response);
+                    const res = JSON.parse(response);
+                    // Mostrar los productos en una nueva página
+                    localStorage.setItem("productos", JSON.stringify([])); // Vaciar carrito
+                    localStorage.setItem("total", "0.00"); // Reiniciar total
+                    // Pasar los productos y el total como parámetros a factura.php
+                    window.location.href = `factura.php?total=${res.total}&productos=${JSON.stringify(array)}`;
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    }
+});
+console.log('Datos recibidos en factura.php:', <?php echo json_encode($_GET); ?>);
+
+
     </script>
 </body>
 

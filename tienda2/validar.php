@@ -4,9 +4,12 @@ require_once "./config/conexion.php";
 $USER = $_POST['usuario'];
 $PASSWORD = $_POST['password'];
 
+
 $consulta = "SELECT 'operador' as tipo_usuario, usuario, clave FROM operador
              UNION
-             SELECT 'newuser' as tipo_usuario, usuario, clave FROM newuser";
+             SELECT 'newuser' as tipo_usuario, usuario, clave FROM newuser
+             UNION
+             SELECT 'usuarios' as tipo_usuario, usuario, clave FROM usuarios";
              
 $resultado = mysqli_query($conexion, $consulta);
 
@@ -20,7 +23,13 @@ while ($row = mysqli_fetch_assoc($resultado)) {
       case 'newuser':
         header("location: index.php");
         exit();
-     
+
+      case 'usuarios':
+      $javascript = '<script type="text/javascript">
+                        document.getElementById("admin").click();
+                      </script>';
+        echo $javascript;
+      exit(); 
     }
   }
 }
